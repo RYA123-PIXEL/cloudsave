@@ -9,7 +9,6 @@
 </head>
 <body>
 
-<!-- AUTH -->
 <section id="auth">
   <div class="auth-info">
     <div class="logo">&#9729; CloudSave</div>
@@ -31,7 +30,7 @@
       <label>Email<input type="email" id="lEmail" required placeholder="nama@email.com"></label>
       <label>Kata sandi<input type="password" id="lPass" required placeholder="Kata sandi"></label>
       <button class="btn" type="submit">Masuk</button>
-      <p class="hint">Akun demo: <b>demo@cloudsave.id</b> / <b>demo123</b></p>
+      <p class="hint">Belum punya akun? Pilih tab Daftar.</p>
     </form>
     <form id="formReg" hidden>
       <label>Nama lengkap<input id="rName" required></label>
@@ -44,7 +43,6 @@
   </div>
 </section>
 
-<!-- APP -->
 <div id="app" hidden>
   <aside id="side">
     <div class="logo">&#9729; CloudSave</div>
@@ -68,13 +66,14 @@
       <button class="btn small" id="upBtn">Unggah file</button>
       <input type="file" id="fileIn" multiple hidden>
     </header>
-
     <section id="view"></section>
   </main>
 </div>
 
+<section id="pub" hidden></section>
 <div id="toast"></div>
 <dialog id="dlg"><form method="dialog" id="dlgForm"></form></dialog>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
 </body>
 </html>
