@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CloudSave - Penyimpanan Online</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- AUTH -->
+<section id="auth">
+  <div class="auth-info">
+    <div class="logo">&#9729; CloudSave</div>
+    <h1>Simpan, kelola, dan bagikan file Anda dengan aman.</h1>
+    <p>Layanan penyimpanan online dengan enkripsi data, backup otomatis, dan akses lintas perangkat untuk pelajar, guru, dan UMKM.</p>
+    <ul>
+      <li>Data terenkripsi</li>
+      <li>Backup otomatis</li>
+      <li>Akses kapan saja, di perangkat apa saja</li>
+    </ul>
+    <small>Raya Team - SMK Telkom Makassar</small>
+  </div>
+  <div class="auth-card">
+    <div class="tabs">
+      <button id="tabLogin" class="active">Masuk</button>
+      <button id="tabReg">Daftar</button>
+    </div>
+    <form id="formLogin">
+      <label>Email<input type="email" id="lEmail" required placeholder="nama@email.com"></label>
+      <label>Kata sandi<input type="password" id="lPass" required placeholder="Kata sandi"></label>
+      <button class="btn" type="submit">Masuk</button>
+      <p class="hint">Akun demo: <b>demo@cloudsave.id</b> / <b>demo123</b></p>
+    </form>
+    <form id="formReg" hidden>
+      <label>Nama lengkap<input id="rName" required></label>
+      <label>Email<input type="email" id="rEmail" required></label>
+      <label>Kata sandi (min. 6 karakter)<input type="password" id="rPass" minlength="6" required></label>
+      <label class="check"><input type="checkbox" id="rCoc" required> Saya menyetujui Code of Conduct CloudSave: menjaga integritas, tidak menyalahgunakan layanan, dan menghormati data pengguna lain.</label>
+      <button class="btn" type="submit">Buat akun</button>
+    </form>
+    <p id="authMsg" class="msg"></p>
+  </div>
+</section>
+
+<!-- APP -->
+<div id="app" hidden>
+  <aside id="side">
+    <div class="logo">&#9729; CloudSave</div>
+    <nav>
+      <a data-v="dashboard" class="active">Dashboard</a>
+      <a data-v="files">File Saya</a>
+      <a data-v="shared">Dibagikan</a>
+      <a data-v="history">Riwayat Aktivitas</a>
+      <a data-v="profile">Profil</a>
+    </nav>
+    <div class="quota">
+      <div class="bar"><i id="qBar"></i></div>
+      <small id="qText"></small>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <button id="menuBtn" aria-label="Menu">&#9776;</button>
+      <input id="search" type="search" placeholder="Cari file atau folder...">
+      <button class="btn small" id="upBtn">Unggah file</button>
+      <input type="file" id="fileIn" multiple hidden>
+    </header>
+
+    <section id="view"></section>
+  </main>
+</div>
+
+<div id="toast"></div>
+<dialog id="dlg"><form method="dialog" id="dlgForm"></form></dialog>
+<script src="script.js"></script>
+</body>
+</html>
